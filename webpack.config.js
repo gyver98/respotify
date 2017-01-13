@@ -3,12 +3,14 @@ const path = require('path');
  
 const PATHS = {
   app: './src/index.js',
+  html: './src/index.html',
   dist: path.join(__dirname, 'dist')
 };
  
 module.exports = {
   entry: {
-    javascript: PATHS.app
+    javascript: PATHS.app,
+    html: PATHS.html
   },
   output: {
     path: PATHS.dist,
@@ -17,5 +19,13 @@ module.exports = {
   },
   devServer: {
     contentBase: PATHS.dist
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.html$/,
+        loader: "file?name=[name].[ext]"
+      }
+    ]
   }
 };
