@@ -2,8 +2,7 @@ import React from 'react';
 
 
 const AlbumList = (props) => {
-  const albums = props.albums.map((album) => <li>{album.name]</li>);
-  
+  const albums = props.albums.map((album) => <li>{album.name}</li>);
   return (
     <ul>
       {albums}
